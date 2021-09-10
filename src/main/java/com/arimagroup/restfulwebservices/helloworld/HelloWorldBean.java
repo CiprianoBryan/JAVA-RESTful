@@ -1,4 +1,4 @@
-package com.arimagroup.restfulwebservices;
+package com.arimagroup.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
     private String message;
