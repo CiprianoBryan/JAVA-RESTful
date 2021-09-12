@@ -1,12 +1,10 @@
 package com.arimagroup.restfulwebservices.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties(value = {"field1", "field2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
-    //@JsonIgnore
     private String field1;
-    //@JsonIgnore
     private String field2;
     private String field3;
 
