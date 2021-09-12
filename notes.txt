@@ -26,3 +26,9 @@ paths: {}, Los diferentes recursos que están expuestos (nombre recursos, status
 components: {} esquemas que se están utilizando (tipo variables, restricciones)
 
 Swagger: generación de Documentación en html a partir de código fuente
+
+###############################################################################
+########################## SPRING BOOT ACTUATOR ###############################
+###############################################################################
+
+Para monitorear las API´s presentes en nuestra aplicación
