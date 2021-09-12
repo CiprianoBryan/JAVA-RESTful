@@ -15,3 +15,14 @@ H2 Database: Base de datos en memoria.
 ###############################################################################
 
 Nos ayuda a personalizar nuestros servicios para diferentes personas.
+
+###############################################################################
+################################ OPEN API #####################################
+###############################################################################
+
+info: {}, información sobre la api
+servers: [], servidores en los que corre la aplicación
+paths: {}, Los diferentes recursos que están expuestos (nombre recursos, status code, tipo)
+components: {} esquemas que se están utilizando (tipo variables, restricciones)
+
+Swagger: generación de Documentación en html a partir de código fuente
