@@ -9,3 +9,9 @@ Spring Web: Para construir una web, incluye RESTful, Spring MVC,
 Spring Boot DevTools: Brinda un aplicación rápida.
 Spring Data JPA: Para la conexión a la BD.
 H2 Database: Base de datos en memoria.
+
+###############################################################################
+####################### Internationalization - i18n ###########################
+###############################################################################
+
+Nos ayuda a personalizar nuestros servicios para diferentes personas.
