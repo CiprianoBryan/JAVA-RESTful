@@ -40,3 +40,5 @@ sencilla através del navegador.
 ########################## SPRING BOOT SECURITY ###############################
 ###############################################################################
 
+- Con esto controlamos el acceso a los endpoints
+- Solo se puede consumir los endpoints si se cuenta con el usuario y contraseña
