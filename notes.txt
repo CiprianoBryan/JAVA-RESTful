@@ -42,3 +42,10 @@ sencilla através del navegador.
 
 - Con esto controlamos el acceso a los endpoints
 - Solo se puede consumir los endpoints si se cuenta con el usuario y contraseña
+
+###############################################################################
+############################### H2 DATABASE ###################################
+###############################################################################
+
+Base de datos en memoria
+- Abrir en el navegador localhost:8080/h2-console y en JDBC URL: jdbc:h2:mem:testdb (Lo indicado en application.properties)
