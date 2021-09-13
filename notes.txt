@@ -35,3 +35,8 @@ Para monitorear las API´s presentes en nuestra aplicación
 
 > Con Hal Explorer podemos explorar las APIs mostradas con actuator de una manera más
 sencilla através del navegador.
+
+###############################################################################
+########################## SPRING BOOT SECURITY ###############################
+###############################################################################
+
