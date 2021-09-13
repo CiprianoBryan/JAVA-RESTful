@@ -49,3 +49,24 @@ sencilla através del navegador.
 
 Base de datos en memoria
 - Abrir en el navegador localhost:8080/h2-console y en JDBC URL: jdbc:h2:mem:testdb (Lo indicado en application.properties)
+
+###############################################################################
+############################# SPRING DATA JPA #################################
+###############################################################################
+
+ > Para poder hablar con un entity necesitamos crear un repositorio de datos de Spring.
+ > El repositorio es un interface
+
+                        @RestController       Interface
+                        Endpoints             Métodos que corren SQL
+                        @RequestMapping       @Repository
+                       *----------*          *---------------------*
+  USER <-- BROWSER <-- | resource | <------- |      repository     |
+                       *----------*          *---------------------*
+                                                        ^
+                                                        |
+                                             *----------------------*
+                                             |        entity        |
+                                             *----------------------*
+                                             @Entity, @Id
+                                             Clase que representa a una tabla de la DB
