@@ -70,3 +70,7 @@ Base de datos en memoria
                                              *----------------------*
                                              @Entity, @Id
                                              Clase que representa a una tabla de la DB
+
+> En un @Entity, cuando un campo tiene relación con un campo de otra tabla (entity), le agregamos la anotación:
+ - OneToMany(mappedBy = "user"), colocamos en mappedBye el nombre del campo al cual se relaciona con la otra tabla
+ - ManyToOne(fetch=FetchType.LAZY), Lazy es para que no recupere los datos del otro campo a menos que llame a getCampo
