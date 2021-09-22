@@ -74,3 +74,18 @@ Base de datos en memoria
 > En un @Entity, cuando un campo tiene relación con un campo de otra tabla (entity), le agregamos la anotación:
  - OneToMany(mappedBy = "user"), colocamos en mappedBye el nombre del campo al cual se relaciona con la otra tabla
  - ManyToOne(fetch=FetchType.LAZY), Lazy es para que no recupere los datos del otro campo a menos que llame a getCampo
+
+> Caso EJM: table usuario and table publicacion, donde un usuario tiene muchas publicaciones
+    y muchas publicaciones tienen un usuario.
+ - Cuando se obtenga a un usuario, se obtendrá tambien las publicaciones que este posee, y por cada publicación se
+   obtendría los detalles del usuario que lo creó, y así sucesivamente, para evitar esto podemos usar @JsonIgnore
+ - Dentro de la clase de publicacion, en el campo user colocamos el @JsonIgnore para ignorar este campo,
+   de esta forma, al obtener un usuario, obtendriamos tambien sus publicaciones sin el detalle de usuario en cada una.+
+
+    @Entity
+    public class Post {
+        ...
+        @ManyToOne(fetch=FetchType.LAZY)
+        @JsonIgnore
+        private User user;
+    }
