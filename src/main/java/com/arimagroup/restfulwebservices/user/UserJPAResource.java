@@ -19,6 +19,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class UserJPAResource {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PostRepository postRepository;
 
     @GetMapping("/jpa/users")
     public List<User> retrieveAllUsers() {
@@ -39,11 +41,11 @@ public class UserJPAResource {
 
     @PostMapping("/jpa/users")
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-        User savedUser = userRepository.save(user);
+        userRepository.save(user);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(savedUser.getId()).toUri();
+                .buildAndExpand(user.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
 
@@ -59,5 +61,21 @@ public class UserJPAResource {
             throw new UserNotFoundException("id-" + id);
         }
         return user.get().getPost();
+    }
+
+    @PostMapping("/jpa/users/{id}/posts")
+    public ResponseEntity<Object> createPost(@PathVariable int id, @RequestBody Post post) {
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isEmpty()) {
+            throw new UserNotFoundException("id-" + id);
+        }
+        User user = userOptional.get();
+        post.setUser(user);
+        postRepository.save(post);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(post.getId()).toUri();
+        return ResponseEntity.created(location).build();
     }
 }
