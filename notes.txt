@@ -7,6 +7,7 @@ Nos ayuda a generar un proyecto con las dependencias que necesitaremos, como:
 Spring Web: Para construir una web, incluye RESTful, Spring MVC, 
             Apache Tomcat como contenedor integrado predeterminado.
 Spring Boot DevTools: Brinda un aplicación rápida.
+Spring Boot Actuator: Proporciona endPoints que ayudan a monitorear y administrar la aplicación
 Spring Data JPA: Para la conexión a la BD.
 H2 Database: Base de datos en memoria.
 
